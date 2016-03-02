@@ -1,0 +1,70 @@
+
+<header class="fixed-nav-bar">
+  <div class="header" ng-controller="MainController as login">
+    <ul class="main">
+     <li class="grow"><a href="/#/login" class="nav-bar" ng-submit="login.doLogout()">Logout</a></li>
+     <li class="grow"><a href="/#/home" class="nav-bar">Rides</a></li>
+     <li class="grow"><a href="/" class="nav-bar">Home</a></li>
+    </ul>
+  </div>
+</header>
+
+<div id="background">
+  <div class="background-image">
+    <div class="main-row">
+      <div class="col-xs-1 col-md-1"></div>
+      <div class="col-xs-10 col-md-10" style="margin: 16% auto">
+
+        <div class="jumbotron" id="allrides">
+          <br>
+          <br>
+          <div id="innerTron">
+              <h2 class="tripIntro">Hop On A Trip!</h2>
+              <br>
+              <br>
+            <table class="table table-bordered">
+
+              <thead>
+                <tr>
+                  <td class="rideTable">Name</td>
+                  <td class="rideTable">Destination</td>
+                  <td class="rideTable">Location(Meet Up)</td>
+                  <td class="rideTable">Space</td>
+                  <td class="rideTable">Join</td>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr ng-repeat="tag in ride.allRides">
+                  <td class="newRideTable">{{tag.name}}</td>
+                  <td class="newRideTable">{{tag.destination}}</td>
+                  <td class="newRideTable">{{tag.location}}</td>
+                  <td class="newRideTable">{{tag.space}}</td>
+                  <td class="newRideTable"><button id="button" ng-click="ride.addRides(tag.name)">+</button></td>
+                </tr>
+              </tbody>
+            </table>
+          <br>
+
+          <br>
+          <div class="createButton">
+            <a href="/#/ride" id="create" style="float: right">Create a Ride</a>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-xs-1 col-md-1"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

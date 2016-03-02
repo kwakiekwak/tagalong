@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My First Angular Application!</title>
+<!-- CSS -->
+<!-- load bootstrap and our stylesheet -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+ <!-- JS -->
+ <!-- load angular and our custom application -->
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+ <script src="public/js/app.js"></script>
+ <script src="public/js/rideController.js"></script>
+ </head>
+ <!-- declaring our angular application and angular controller -->
+  <body class="container" ng-app="TagAlong" ng-controller="RideController as ride">
+<!--     <body ng-controller="UserController as user">
+
+    <form ng-submit="user.newUser(user.name, user.username, user.email, user.password)">
+    <label>Name</label>
+    <input type="text" ng-model="user.name">
+
+    <label>Username</label>
+    <input type="text" ng-model="user.username">
+
+    <label>Email</label>
+    <input type="email" ng-model="user.email">
+
+    <label>Password</label>
+    <input type="password" ng-model="user.password">
+
+    <button type="submit">Create New User</button>
+
+    </form>
+
+    </body> -->
+<body ng-controller="UserController as user">
+
+    <form ng-submit="user.newUser(user.name, user.username, user.email, user.password)">
+    <label>Name</label>
+    <input type="text" ng-model="user.name">
+
+    <label>Username</label>
+    <input type="text" ng-model="user.username">
+
+    <label>Email</label>
+    <input type="email" ng-model="user.email">
+
+    <label>Password</label>
+    <input type="password" ng-model="user.password">
+
+    <button type="submit">Create New User</button>
+
+    </form>
+
+</body>
+
+
+
+    <div class="jumbotron">
+      <h2> This is my message: </h2>
+      {{ride.room}}
+      <!-- form to update the message variable using ng-model -->
+      <div class="form-group">
+        <label>Message</label>
+        <input type="text" class="form-control" ng-model="ride.room">
+      </div>
+
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Location</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="tag in ride.tagalongs">
+            <td>{{tag.name}}</td>
+            <td>{{tag.email}}</td>
+            <td>{{tag.location}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- form to add computer to the list -->
+      <form class="form-inline" ng-submit="ride.addRide()">
+        <input type="text" class="form-control" placeholder="name" ng-model="ride.rideData.name">
+        <input type="text" class="form-control" placeholder="email" ng-model="ride.rideData.email">
+        <input type="text" class="form-control" placeholder="location" ng-model="ride.rideData.location">
+      <button type="submit" class="btn btn-success">Add</button> </form>
+    </div>
+ </body>
+ </html>

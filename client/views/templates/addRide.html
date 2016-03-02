@@ -1,0 +1,59 @@
+
+<header class="fixed-nav-bar">
+  <div class="header" ng-controller="MainController as login">
+    <ul class="main">
+     <li class="grow"><a href="/#/login" class="nav-bar" ng-submit="login.doLogout()">Logout</a></li>
+     <li class="grow"><a href="/#/home" class="nav-bar">Rides</a></li>
+     <li class="grow"><a href="/" class="nav-bar">Home</a></li>
+    </ul>
+  </div>
+</header>
+
+<div id="background">
+  <div class="background-image">
+    <div class="main-row">
+      <div class="col-xs-1 col-md-1"></div>
+      <div class="col-xs-10 col-md-10" style="margin: 16% auto">
+
+        <div class="jumbotron" id="allrides">
+          <div id="innerTron">
+          <br>
+          <br>
+          <div class="container" style="margin-top: 5%">
+            <div class="row">
+              <div class="col-md-4 col-xs-4">
+                <img class="img-responsive img-circle" src="../public/images/people.jpg" style="width: 75%">
+              </div>
+              <div class="col-md-4 col-xs-4">
+                <span class="periods" style="margin-left: 30%">.</span>
+                <span class="periods">.</span>
+                <span class="periods">.</span>
+              </div>
+              <div class="col-md-4 col-xs-4">
+                <img class="img-responsive img-circle" src="../public/images/carpool.jpg" style="width: 75%; margin-left: 12%">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="addRide">
+            <form class="form-inline" ng-submit="ride.newRide()" style="margin: 10% auto;">
+              <input type="text" class="form-ride" placeholder="name" ng-model="ride.rideData.name">
+              <input type="text" class="form-ride" placeholder="destination" ng-model="ride.rideData.destination">
+              <input type="text" class="form-ride" placeholder="meet up" ng-model="ride.rideData.location">
+              <input type="text" class="form-ride" placeholder="space available" ng-model="ride.rideData.space">
+              <br>
+
+              <button type="submit" class="btn btn-success" style="margin-top: 4%">Add</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-xs-1 col-md-1"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- form to add computer to the list -->
