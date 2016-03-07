@@ -18,7 +18,7 @@ angular.module('userApp')
     Auth.createUser(vm.loginData.name, vm.loginData.email, vm.loginData.username, vm.loginData.password)
     .success(function(data) {
       // after it is created console.log then send the user to the /home page
-      console.log(data)
+      // console.log(data)
       $location.path('/home');
     })
   }
