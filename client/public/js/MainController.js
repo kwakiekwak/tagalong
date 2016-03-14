@@ -1,4 +1,4 @@
-angular.module('userApp')
+mainmangular.module('userApp')
   // $scope detects a route change and checks if our user is still logged in.
   // every different page = new check login's state
   .controller('MainController', function ($scope, $location, Auth) {
